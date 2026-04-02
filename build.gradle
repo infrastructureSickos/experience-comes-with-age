@@ -8,10 +8,6 @@ buildscript {
     }
 }
 
-plugins {
-    id 'com.modrinth.minotaur' version '2.+'
-}
-
 apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle'
 
@@ -96,12 +92,3 @@ jar {
     }
 }
 
-modrinth {
-    token = System.getenv('MODRINTH_API_TOKEN')
-    projectId = modrinth_id
-    versionNumber = mod_version
-    versionType = 'release'
-    uploadFile = jar
-    gameVersions = [mc_version]
-    loaders = ['forge']
-}
